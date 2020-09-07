@@ -1,0 +1,31 @@
+.sidebar__nav {
+  margin-top: 41px;
+}
+.nav-block {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.nav-block:hover {
+  background: #c2b8cc;
+  border-radius: 5px;
+}
+.nav-image {
+  width: 24px;
+  height: 100%;
+}
+.nav-image:hover {
+  background: #a291b3;
+  border-radius: 5px 0 0 5px;
+}
+.nav-text {
+  padding-left: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: rgba(0, 0, 0, 0.9);
+}

@@ -3,7 +3,7 @@ function NavItem({ nav }) {
   return (
     <div className="nav-block">
       <a href="">
-        <img className="nav-image" src={nav.img} alt= "img" />
+        <img className="nav-image" src={nav.img} />
       </a>
       <a className=" nav-text" href="">
         {nav.name}

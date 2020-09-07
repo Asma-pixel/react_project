@@ -1,6 +1,9 @@
 import React from "react";
 import "./header.css";
 function Header() {
+  let points = 15;
+  let hi = "Hello Monica!";
+  let email = "monica@mail.com";
   return (
     <div>
       <div className="hex">
@@ -8,13 +11,13 @@ function Header() {
           <div className="hexagon"></div>
         </div>
         <div className="rad">
-          <h2 className="points">15</h2>
+          <h2 className="points">{points}</h2>
         </div>
       </div>
       <div className="sidebar__titles">
-        <h1 className="title">Hello Monica!</h1>
+        <h1 className="title">{hi}</h1>
         <a className="title—mini" href="">
-          monica@mail.com
+          {email}
         </a>
       </div>
     </div>

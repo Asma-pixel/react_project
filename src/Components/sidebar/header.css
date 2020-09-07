@@ -9,8 +9,7 @@
   background: linear-gradient(#e66465, #9198e5);
 }
 .hexagon {
-  background-image: url("/src/images/monica.svg");
-  background: #fff;
+  background-image: url("./sidebar_img/monica.svg");
   width: 90px;
   height: 100px;
   clip-path: polygon(50% 4%, 97% 27%, 97% 74%, 50% 97%, 4% 74%, 4% 27%);
