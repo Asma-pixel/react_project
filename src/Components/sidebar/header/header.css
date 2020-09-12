@@ -9,7 +9,7 @@
   background: linear-gradient(#e66465, #9198e5);
 }
 .hexagon {
-  background-image: url("./sidebar_img/monica.svg");
+  background-image: url("./monica.svg");
   width: 90px;
   height: 100px;
   clip-path: polygon(50% 4%, 97% 27%, 97% 74%, 50% 97%, 4% 74%, 4% 27%);
@@ -41,7 +41,7 @@
   letter-spacing: 0.1375px;
   color: rgba(255, 255, 255, 0.9);
 }
-.ttitle {
+.title {
   margin: 3px 0 13px 0;
   margin-left: 0;
   font-family: Open Sans;

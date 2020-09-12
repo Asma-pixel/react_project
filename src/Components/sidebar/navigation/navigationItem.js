@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 function NavItem({ nav }) {
   return (
     <div className="nav-block">

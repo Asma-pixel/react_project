@@ -1,0 +1,35 @@
+.parent-of-content {
+  display: flex;
+  padding-top: 32px;
+  justify-content: center;
+  width: 100%;
+}
+
+.content {
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.content__titles {
+  display: flex;
+  margin-bottom: 24px;
+}
+.content__titles-bold {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  color: rgba(0, 0, 0, 0.9);
+}
+.content__titles-normal {
+  margin-left: 5px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  font-weight: normal;
+}
+.sandwich {
+  display: none;
+}

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import Header from "./header";
-import Navigation from "./navigation";
+import React from "react";
+import "./sidebar.css";
+import Header from "./header/header";
+import Navigation from "./navigation/navigation";
 function Sidebar() {
   return (
     <div className="sidebar">
