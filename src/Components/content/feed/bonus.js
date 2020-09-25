@@ -1,5 +1,8 @@
 import React from "react";
+import Option from "./feed_img/opt.svg";
 function Bonus({ bon }) {
+  console.log(bon);
+
   return (
     <div className="box-bigger">
       <div className="second-wrap-of-box">
@@ -10,25 +13,25 @@ function Bonus({ bon }) {
           </div>
           <form className="parent-of-options-and-conditions">
             <h2 className="condition">just now</h2>
-            <img className="option" src="img/opt.svg" />
+            <img className="option" src={Option} />
           </form>
         </div>
         <div className="wrap-first-text">
           <div className="first-block-text">
             <span className="first-block-text first-block-text-1st">
-              +5
+              {`+ ${bon.points} `}
               <span className="first-block-text first-block-text-1st-normal">
-                to{" "}
+                to
               </span>
               <a
                 className="first-block-text first-block-text first-block-text-1st first-block-text first-block-text-1st-link"
                 href=""
               >
-                alex.woods
+                {` ${bon.receiverName}`}
               </a>
             </span>
-            <p class="first-block-text first-block-text-2nd">
-              Thank you for the help with coffee machine
+            <p className="first-block-text first-block-text-2nd">
+              {bon.reason}
             </p>
             <img className="man-image" src="" />
             <span className="first-block-text first-block-text-3rd">
