@@ -3,20 +3,20 @@ import "./content.css";
 import Feed from "./feed/feed";
 import Form from "./form/form";
 function Content() {
-  const [points, setPoints] = useState(100);
+  let [points, setPoints] = useState(100);
   const [bonus, setBonus] = useState([]);
-  function addBonus(points, receiverName, reason) {
+  function addBonus({ point, name, reason }) {
+    setPoints((points = points - point));
     setBonus(
       bonus.concat([
         {
-          points,
           id: Date.now(),
-          receiverName,
+          point,
+          name,
           reason,
         },
       ])
     );
-    console.log(bonus);
   }
   return (
     <div className="parent-of-content">
@@ -30,7 +30,7 @@ function Content() {
             </span>
           </span>
         </div>
-        <Form onCreate={addBonus} />
+        <Form onCreate={addBonus} helpValid={points} />
         <Feed bonus={bonus} key={bonus.id} />
       </div>
     </div>

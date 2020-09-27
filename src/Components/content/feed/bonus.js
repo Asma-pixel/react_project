@@ -1,8 +1,6 @@
 import React from "react";
 import Option from "./feed_img/opt.svg";
 function Bonus({ bon }) {
-  console.log(bon);
-
   return (
     <div className="box-bigger">
       <div className="second-wrap-of-box">
@@ -19,7 +17,7 @@ function Bonus({ bon }) {
         <div className="wrap-first-text">
           <div className="first-block-text">
             <span className="first-block-text first-block-text-1st">
-              {`+ ${bon.points} `}
+              {`+ ${bon.point} `}
               <span className="first-block-text first-block-text-1st-normal">
                 to
               </span>
@@ -27,7 +25,7 @@ function Bonus({ bon }) {
                 className="first-block-text first-block-text first-block-text-1st first-block-text first-block-text-1st-link"
                 href=""
               >
-                {` ${bon.receiverName}`}
+                {` ${bon.name}`}
               </a>
             </span>
             <p className="first-block-text first-block-text-2nd">
