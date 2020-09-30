@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Option from "./feed_img/opt.svg";
+import Context from "./Context";
+import "./feed.css";
+import { useContext } from "react";
 function Bonus({ bon }) {
+  const [add, setAdd] = useState(false);
+  const { deleteBonus } = useContext(Context);
   return (
     <div className="box-bigger">
       <div className="second-wrap-of-box">
@@ -11,7 +16,20 @@ function Bonus({ bon }) {
           </div>
           <form className="parent-of-options-and-conditions">
             <h2 className="condition">just now</h2>
-            <img className="option" src={Option} />
+            <img
+              className="option"
+              src={Option}
+              onClick={() => {
+                setAdd(true);
+              }}
+              onDoubleClick={() => {
+                setAdd(false);
+              }}
+            />
+            <ul className={add ? "over" : "notover"}>
+              <li onClick={() => deleteBonus(bon.id)}>Удалить</li>
+              <li>Важное</li>
+            </ul>
           </form>
         </div>
         <div className="wrap-first-text">

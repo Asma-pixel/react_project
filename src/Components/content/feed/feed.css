@@ -177,6 +177,7 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  position: relative;
 }
 .condition {
   margin: -3px 20px 0 0;
@@ -194,4 +195,30 @@
   cursor: pointer;
   height: 4px;
   width: 16px;
+}
+.over {
+  display: flex;
+  position: absolute;
+  right: -104px;
+  bottom: 40px;
+  list-style-type: none;
+  flex-direction: column;
+  background: #e4e4e6;
+  width: 100px;
+  justify-content: center;
+  border-radius: 3px;
+  height: 42px;
+  align-items: center;
+}
+.over li:hover {
+  background: #9f9fa1;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+.over li:active {
+  background: rgb(228, 164, 164);
+}
+.notover {
+  display: none;
 }

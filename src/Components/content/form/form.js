@@ -6,6 +6,7 @@ function Form({ onCreate, helpValid }) {
   const [point, setPoint] = useState("");
   const [name, setName] = useState("");
   const [reason, setReason] = useState("");
+  const [isValid, setIsValid] = useState(true);
   const dataObj = {
     point: "",
     name: "",
@@ -25,12 +26,13 @@ function Form({ onCreate, helpValid }) {
       setPoint("");
       setName("");
       setReason("");
-      console.log(dataObj);
-      console.log(name);
+      setIsValid(true);
+    } else {
+      setIsValid(false);
     }
   }
   return (
-    <div className="box">
+    <div className={isValid ? "box" : "box-error"}>
       <form className="first-wrap" onSubmit={submitHandler}>
         <div className="wrap-text">
           <div className="firstblock-text">

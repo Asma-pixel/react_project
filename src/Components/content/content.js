@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./content.css";
 import Feed from "./feed/feed";
 import Form from "./form/form";
+import Context from "./feed/Context";
 function Content() {
   let [points, setPoints] = useState(100);
-  const [bonus, setBonus] = useState([]);
+  const [bonus, setBonus] = useState([{ id: 0, point: 5, name: "fad" }]);
   function addBonus({ point, name, reason }) {
     setPoints((points = points - point));
     setBonus(
@@ -18,6 +19,9 @@ function Content() {
       ])
     );
   }
+  function deleteBonus(id) {
+    setBonus(bonus.filter((bon) => bon.id !== id));
+  }
   return (
     <div className="parent-of-content">
       <div className="content">
@@ -30,8 +34,10 @@ function Content() {
             </span>
           </span>
         </div>
-        <Form onCreate={addBonus} helpValid={points} />
-        <Feed bonus={bonus} key={bonus.id} />
+        <Context.Provider value={{ deleteBonus }}>
+          <Form onCreate={addBonus} helpValid={points} />
+          <Feed bonus={bonus} key={bonus.id} deleteBonus={deleteBonus} />
+        </Context.Provider>
       </div>
     </div>
   );

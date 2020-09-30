@@ -5,6 +5,14 @@
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1), 0px 2px 9px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
 }
+.box-error {
+  margin-bottom: 24px;
+  width: 656px;
+  background: #fff;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1), 0px 2px 9px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  border: 2px solid rgb(168, 13, 13);
+}
 .first-wrap {
   width: 100%;
   display: flex;
@@ -31,6 +39,9 @@
   line-height: 24px;
   letter-spacing: 0.2px;
   color: rgba(0, 0, 0, 0.9);
+}
+.box-error .text-int {
+  color: rgb(168, 13, 13);
 }
 .text-int__point {
   width: 100%;
