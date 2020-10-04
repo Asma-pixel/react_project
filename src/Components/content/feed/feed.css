@@ -1,4 +1,6 @@
 .box-bigger {
+  display: flex;
+  flex-wrap: wrap;
   width: 656px;
   margin-bottom: 24px;
   background: #fff;
@@ -13,7 +15,6 @@
 .first-content {
   margin: 28px 20px 14px 19px;
   display: flex;
-  flex-wrap: nowrap;
 }
 .profiletitle {
   width: 100%;
@@ -66,6 +67,8 @@
 }
 .first-block-text-2nd {
   margin-top: 8px;
+  display: flex;
+  word-break: break-all;
 }
 .first-block-text-3rd-link {
   cursor: pointer;
@@ -133,7 +136,6 @@
 }
 .title-name {
   cursor: pointer;
-  font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -161,11 +163,12 @@
   font-weight: normal;
   text-decoration: none;
   color: #03afff;
+  word-break: break-all;
 }
 .first-block-text-2nd {
   margin-top: 8px;
 }
-.first-block-text-3rd-link {
+.first-block-text-3rd {
   cursor: pointer;
   text-decoration: none;
   color: #faa120;
@@ -173,6 +176,7 @@
 .man-image {
   margin: 24px 0 24px 0;
 }
+
 .parent-of-options-and-conditions {
   display: flex;
   justify-content: flex-end;
@@ -203,7 +207,7 @@
   bottom: 40px;
   list-style-type: none;
   flex-direction: column;
-  background: #e4e4e6;
+  background: #b5b5bb;
   width: 100px;
   justify-content: center;
   border-radius: 3px;
@@ -211,13 +215,13 @@
   align-items: center;
 }
 .over li:hover {
-  background: #9f9fa1;
+  background: #b8b8f0;
   cursor: pointer;
   width: 100%;
   text-align: center;
 }
 .over li:active {
-  background: rgb(228, 164, 164);
+  background: #5b7cd6;
 }
 .notover {
   display: none;

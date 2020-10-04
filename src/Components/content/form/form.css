@@ -1,3 +1,47 @@
+.content__titles {
+  display: flex;
+  margin-bottom: 24px;
+}
+.content__titles-bold {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  color: rgba(0, 0, 0, 0.9);
+}
+.content__titles-bold-red {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  color: rgb(168, 13, 13);
+}
+.content__titles-bold-red .normal {
+  margin-left: 5px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.9);
+}
+.content__titles-bold .normal {
+  margin-left: 5px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.9);
+}
+.sandwich {
+  display: none;
+}
+
 .box {
   margin-bottom: 24px;
   width: 656px;
@@ -40,10 +84,18 @@
   letter-spacing: 0.2px;
   color: rgba(0, 0, 0, 0.9);
 }
-.box-error .text-int {
+.text-int-error {
+  display: flex;
+  padding-top: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
   color: rgb(168, 13, 13);
 }
-.text-int__point {
+.text-int .point {
   width: 100%;
   margin-left: 8px;
   font-family: Open Sans;
@@ -54,6 +106,24 @@
   letter-spacing: 0.2px;
   border: none;
   outline: none;
+}
+.text-int-error .point {
+  width: 100%;
+  margin-left: 8px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  border: none;
+  outline: none;
+}
+.text-int .point:focus {
+  border-bottom: 1px solid black;
+}
+.text-int-error .point:focus {
+  border-bottom: 1px solid black;
 }
 .text-int__point-1 {
   width: 100%;
@@ -66,6 +136,9 @@
   letter-spacing: 0.2px;
   border: none;
   outline: none;
+}
+.text-int__point-1:focus {
+  border-bottom: 1px solid black;
 }
 .give-block {
   width: 100%;

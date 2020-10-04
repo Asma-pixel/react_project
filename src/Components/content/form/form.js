@@ -6,7 +6,9 @@ function Form({ onCreate, helpValid }) {
   const [point, setPoint] = useState("");
   const [name, setName] = useState("");
   const [reason, setReason] = useState("");
-  const [isValid, setIsValid] = useState(true);
+  const [isValidPoint, setIsValidPoint] = useState(true);
+  const [isValidName, setIsValidName] = useState(true);
+  const [isValidHelp, setIsValidHelp] = useState(true);
   const dataObj = {
     point: "",
     name: "",
@@ -17,7 +19,8 @@ function Form({ onCreate, helpValid }) {
     if (
       point.replace(/\s+/g, "") !== "" &&
       name.replace(/\s+/g, "") !== "" &&
-      point <= helpValid
+      point <= helpValid &&
+      point != 0
     ) {
       dataObj.point = point;
       dataObj.name = name;
@@ -26,55 +29,86 @@ function Form({ onCreate, helpValid }) {
       setPoint("");
       setName("");
       setReason("");
-      setIsValid(true);
-    } else {
-      setIsValid(false);
+      setIsValidPoint(true);
+      setIsValidName(true);
+      setIsValidHelp(true);
     }
+    if (point.replace(/\s+/g, "") == "" || point == 0) {
+      setIsValidPoint(false);
+    } else setIsValidPoint(true);
+    if (name.replace(/\s+/g, "") == "") {
+      setIsValidName(false);
+    } else setIsValidName(true);
+
+    if (point >= helpValid) {
+      setIsValidHelp(false);
+    } else setIsValidHelp(true);
   }
   return (
-    <div className={isValid ? "box" : "box-error"}>
-      <form className="first-wrap" onSubmit={submitHandler}>
-        <div className="wrap-text">
-          <div className="firstblock-text">
-            <label className="text-int">
-              Give
-              <input
-                className="text-int__point"
-                type="text"
-                placeholder="5"
-                value={point}
-                onChange={(event) => setPoint(event.target.value)}
-              />
-            </label>
-            <label className="text-int">
-              to
-              <input
-                className="text-int__point"
-                type="text"
-                placeholder="alex"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-              />
-            </label>
-            <label className="text-int">
-              <input
-                className="text-int__point-1"
-                type="text"
-                placeholder="for the reason"
-                value={reason}
-                onChange={(event) => setReason(event.target.value)}
-              />
-            </label>
+    <div>
+      <div className="content__titles">
+        <div className="sandwich"></div>
+        <span
+          className={
+            isValidHelp ? "content__titles-bold" : "content__titles-bold-red"
+          }
+        >
+          {helpValid} points{" "}
+          <span className="normal">to show one's gratitude</span>
+        </span>
+      </div>
+      <div
+        className={
+          isValidPoint && isValidName && isValidHelp ? "box" : "box-error"
+        }
+      >
+        <form className="first-wrap" onSubmit={submitHandler}>
+          <div className="wrap-text">
+            <div className="firstblock-text">
+              <label
+                className={
+                  isValidPoint && isValidHelp ? "text-int" : "text-int-error"
+                }
+              >
+                Give
+                <input
+                  className="point"
+                  type="text"
+                  placeholder="5"
+                  value={point}
+                  onChange={(event) => setPoint(event.target.value)}
+                />
+              </label>
+              <label className={isValidName ? "text-int" : "text-int-error"}>
+                to
+                <input
+                  className="point"
+                  type="text"
+                  placeholder="alex"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                />
+              </label>
+              <label className="text-int">
+                <input
+                  className="text-int__point-1"
+                  type="text"
+                  placeholder="for the reason"
+                  value={reason}
+                  onChange={(event) => setReason(event.target.value)}
+                />
+              </label>
+            </div>
           </div>
-        </div>
-        <div className="give-block">
-          <img className="gif-image" src={gif} />
-          <img className="gif-image-gif" src={Gif} />
-          <div className="wrap-button">
-            <input className="but" type="submit" value="Give" />
+          <div className="give-block">
+            <img className="gif-image" src={gif} />
+            <img className="gif-image-gif" src={Gif} />
+            <div className="wrap-button">
+              <input className="but" type="submit" value="Give" />
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }
