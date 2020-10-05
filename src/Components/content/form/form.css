@@ -205,6 +205,9 @@
   .content__titles-bold .normal {
     color: white;
   }
+  .content__titles-bold-red .normal {
+    color: white;
+  }
   .sandwich {
     position: relative;
     display: flex;
@@ -235,6 +238,9 @@
     border-radius: 4px;
   }
   .box {
+    width: 100%;
+  }
+  .box-error {
     width: 100%;
   }
 }
