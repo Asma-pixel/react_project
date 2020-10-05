@@ -15,6 +15,11 @@
 .noAddComments {
   display: none;
 }
+.commentBox {
+  display: flex;
+  border-top: 3px solid #f6f5f7;
+  margin: 0px -24px 24px -24px;
+}
 .comments {
   font-size: 16px;
   line-height: 24px;
@@ -25,12 +30,29 @@
   border: none;
   width: 90%;
   height: 100%;
+  border-radius: 4 0 0 4px;
 }
 .comments:hover {
   outline: 1.5px solid rgb(114, 116, 121);
 }
 .comments:focus {
   outline: 1.5px solid rgb(121, 146, 207);
+}
+.comments-error {
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  resize: none;
+  overflow: auto;
+  outline: none;
+  border: none;
+  width: 90%;
+  height: 100%;
+  border-radius: 0 0 0 4px;
+  border: 1px solid red;
+}
+.comments-error::-webkit-input-placeholder {
+  color: red;
 }
 .add {
   background: #b5b5bb;
@@ -52,4 +74,60 @@
 }
 .add:active {
   background: #5b7cd6;
+}
+.image-circle-comment {
+  display: flex;
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+  background-image: url("https://starsunfolded.com/wp-content/uploads/2016/07/johnlennon.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.profileTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 24px 0 0 24px;
+}
+.name {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+.comment {
+  width: 100%;
+  font-weight: normal;
+  word-break: break-all;
+}
+.parent-of-conditions {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+  position: relative;
+  margin-top: 24px;
+}
+@media (max-width: 960px) {
+  .addComments {
+    width: 100%;
+  }
+  .comments {
+    outline: none;
+  }
+  .comments:hover {
+    outline: none;
+  }
+  .comments:focus {
+    outline: none;
+  }
 }

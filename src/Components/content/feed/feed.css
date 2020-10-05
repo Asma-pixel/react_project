@@ -171,7 +171,7 @@
 .first-block-text-3rd {
   cursor: pointer;
   text-decoration: none;
-  color: #faa120;
+  color: rgb(114, 116, 121);
 }
 .man-image {
   margin: 24px 0 24px 0;
@@ -225,4 +225,12 @@
 }
 .notover {
   display: none;
+}
+@media (max-width: 960px) {
+  .box-bigger {
+    width: 100%;
+  }
+  .man-image {
+    width: 100%;
+  }
 }

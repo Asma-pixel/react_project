@@ -1,4 +1,3 @@
-
 .parent-of-content {
   display: flex;
   padding-top: 32px;
@@ -9,4 +8,16 @@
 .content {
   flex-shrink: 0;
   flex-direction: column;
+}
+@media (max-width: 960px) {
+  .parent-of-content {
+    width: 100%;
+    display: flex;
+  }
+  .content {
+    display: flex;
+    flex-shrink: 1;
+    padding: 20px;
+    width: 100%;
+  }
 }

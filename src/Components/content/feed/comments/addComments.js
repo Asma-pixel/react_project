@@ -3,14 +3,18 @@ import "./comment.css";
 function AddComments({ comm, onCreate }) {
   const [comment, setComment] = useState("");
   const [isAdded, setIsAdded] = useState(false);
+  const [isValid, setIsValid] = useState(true);
   function submitComment(event) {
     if (event.keyCode === 13) {
       setIsAdded(true);
     }
     event.preventDefault();
-    if (isAdded) {
+    if (isAdded && comment.replace(/\s+/g, "") !== "") {
       onCreate(comment);
       setComment("");
+      setIsValid(true);
+    } else {
+      setIsValid(false);
     }
   }
   return (
@@ -21,9 +25,7 @@ function AddComments({ comm, onCreate }) {
       <input
         value={comment}
         onChange={(event) => setComment(event.target.value)}
-        className="comments"
-        cols="22"
-        rows="2"
+        className={isValid ? "comments" : "comments-error"}
         type="textarea"
         placeholder="Write your comment"
       ></input>

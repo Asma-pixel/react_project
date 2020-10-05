@@ -6,3 +6,8 @@
   flex-shrink: 0;
   flex-direction: column;
 }
+@media (max-width: 960px) {
+  .sidebar {
+    display: none;
+  }
+}
