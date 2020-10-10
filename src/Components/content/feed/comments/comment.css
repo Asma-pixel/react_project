@@ -121,6 +121,9 @@
   .addComments {
     width: 100%;
   }
+  .commentBox {
+    border-top: 3px solid #0f2b59;
+  }
   .comments {
     outline: none;
   }

@@ -29,7 +29,6 @@ function Bonus({ bon }) {
       ])
     );
   }
-  console.log(comments);
   return (
     <div>
       <div className="box-bigger">

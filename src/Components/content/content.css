@@ -9,6 +9,7 @@
   flex-shrink: 0;
   flex-direction: column;
 }
+
 @media (max-width: 960px) {
   .parent-of-content {
     width: 100%;
@@ -19,5 +20,7 @@
     flex-shrink: 1;
     padding: 20px;
     width: 100%;
+    position: relative;
   }
+  
 }

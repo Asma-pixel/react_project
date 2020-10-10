@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./form.css";
 import gif from "./form_img/gif.svg";
 import Gif from "./form_img/GIF-img.svg";
-function Form({ onCreate, helpValid }) {
+function Form({ onCreate, helpValid, AddSidebar }) {
+  const [addSidebar, setAddSidebar] = useState(false);
   const [point, setPoint] = useState("");
   const [name, setName] = useState("");
   const [reason, setReason] = useState("");
@@ -20,7 +21,7 @@ function Form({ onCreate, helpValid }) {
       point.replace(/\s+/g, "") !== "" &&
       name.replace(/\s+/g, "") !== "" &&
       point <= helpValid &&
-      point != 0
+      point !== 0
     ) {
       dataObj.point = point;
       dataObj.name = name;
@@ -33,10 +34,15 @@ function Form({ onCreate, helpValid }) {
       setIsValidName(true);
       setIsValidHelp(true);
     }
-    if (point.replace(/\s+/g, "") == "" || point == 0) {
+    if (
+      point.replace(/\s+/g, "") === "" ||
+      point === 0 ||
+      isNaN(point) === true
+    ) {
       setIsValidPoint(false);
+      setPoint("");
     } else setIsValidPoint(true);
-    if (name.replace(/\s+/g, "") == "") {
+    if (name.replace(/\s+/g, "") === "") {
       setIsValidName(false);
     } else setIsValidName(true);
 
@@ -47,7 +53,15 @@ function Form({ onCreate, helpValid }) {
   return (
     <div>
       <div className="content__titles">
-        <div className="sandwich"></div>
+        <div
+          className="wrapper-sandwich"
+          onClick={() => {
+            setAddSidebar(true);
+            AddSidebar(addSidebar);
+          }}
+        >
+          <div className="sandwich"></div>
+        </div>
         <span
           className={
             isValidHelp ? "content__titles-bold" : "content__titles-bold-red"
