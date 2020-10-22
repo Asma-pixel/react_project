@@ -4,7 +4,6 @@ import Feed from "./feed/feed";
 import Form from "./form/form";
 import Context from "./Context";
 function Content({ AddSidebar }) {
-  const [addSidebar, setAddSidebar] = useState(false);
   let [points, setPoints] = useState(100);
   const [bonus, setBonus] = useState([{ id: 0, point: 5, name: "fad" }]);
   function addBonus({ point, name, reason }) {
@@ -20,17 +19,12 @@ function Content({ AddSidebar }) {
       ])
     );
   }
-  console.log(addSidebar);
   function deleteBonus(id) {
     setBonus(bonus.filter((bon) => bon.id !== id));
   }
   return (
     <div
       className="parent-of-content"
-      onDoubleClick={() => {
-        setAddSidebar(false);
-        AddSidebar(addSidebar);
-      }}
     >
       <div className="content">
         <Context.Provider value={{ deleteBonus }}>

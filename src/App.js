@@ -7,10 +7,9 @@ function App() {
   function AddSidebar(addSidebar) {
     setSidebarNeded(addSidebar);
   }
-  console.log(sidebarNeded);
   return (
     <div className="main">
-      <Sidebar sidebarNeded={sidebarNeded} />
+      <Sidebar sidebarNeded={sidebarNeded}  AddSidebar={AddSidebar}/>
       <Content AddSidebar={AddSidebar} />
     </div>
   );
