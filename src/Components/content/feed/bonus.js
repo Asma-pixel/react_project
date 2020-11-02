@@ -8,7 +8,7 @@ import AddComments from "./comments/addComments";
 function Bonus({ bon }) {
   const { deleteBonus } = useContext(Context);
   const [del, setDel] = useState(null);
-  const [comm, setComm] = useState(false);
+  const [comm, setComm] = useState(null);
   document.ondblclick = () => {
     setDel(false);
   };
@@ -23,15 +23,20 @@ function Bonus({ bon }) {
       ])
     );
   }
-  function lineBefore(comments,comm){
-    if (comments.length !==0 || comm === true ){ setLine(true);}
-    else setLine(false)
+   const[line,setLine]=useState(false);
+  let length =comments.length;
+  function lineBefore(length, comm){  
+    if (length !==0 || comm !== 0 ){ setLine(true)}
+    else setLine(false);
+    console.log("comm="+comm);
+    console.log("comments="+length);
+    console.log(line);
   }
 let classes = "over";
  if(del === false){
   classes="over_hide";
 } else if(del === true) {classes="over_show";}
-const[line,setLine]=useState(null);
+
   return (
     <div>
       <div className="box-bigger">
@@ -79,7 +84,8 @@ const[line,setLine]=useState(null);
                 className="addCommentBlock">
                 <div className={comm ? "commentImageYellow":"commentImage"} onClick={() => {
                   setComm(Math.abs(comm*1-1));
-                  lineBefore({comm,comments});
+                  lineBefore(length,comm);
+                
                 }}></div>
                 <div className="plusBonus"></div>
               </div>
