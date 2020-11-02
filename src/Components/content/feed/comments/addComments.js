@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./comment.css";
-function AddComments({ comm, onCreate }) {
+function AddComments({ comm, onCreate,lineBeforeComments }) {
   const [comment, setComment] = useState("");
   const [isAdded, setIsAdded] = useState(false);
   const [isValid, setIsValid] = useState(true);
@@ -17,6 +17,7 @@ function AddComments({ comm, onCreate }) {
       setIsValid(false);
     }
   }
+  const [line,setLine]=useState(false);
   return (
     <form
       className={comm ? "addComments" : "noAddComments"}
@@ -25,13 +26,19 @@ function AddComments({ comm, onCreate }) {
       <input
         value={comment}
         onChange={(event) => setComment(event.target.value)}
-        className={isValid ? "comments" : "comments-error"}
+        className={isValid ? "comments-write" : "comments-write-error"}
         type="textarea"
         placeholder="Write your comment"
       ></input>
-      <button className="add" type="submit" onClick={() => setIsAdded(true)}>
-        Comment
+      <div className="give-block">
+          <div className="gif-image"></div>
+          <div className="gif-image-gif"></div>
+      <div className="wrap-add">
+      <button className="add" type="submit" onClick={() => {setIsAdded(true);} }>
+       Add
       </button>
+      </div>
+      </div>
     </form>
   );
 }

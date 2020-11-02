@@ -200,31 +200,125 @@
   height: 4px;
   width: 16px;
 }
+@keyframes show_options {
+  0% {
+    right: 10px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .over {
+  visibility: hidden;
+  position: absolute;
+}
+.over_show {
   display: flex;
   position: absolute;
-  right: -104px;
-  bottom: 40px;
+  right: 10px;
+  bottom: -40px;
   list-style-type: none;
   flex-direction: column;
-  background: #b5b5bb;
-  width: 100px;
-  justify-content: center;
+  background: #dadaeb;
+  width: 110px;
   border-radius: 3px;
-  height: 42px;
-  align-items: center;
+  height: 70px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  animation: show_options 0.3s forwards;
 }
-.over li:hover {
+.over_show li {
+  width: 80%;
+  height: 35px;
+  padding-top: 4px;
+  align-self: center;
+  text-align: center;
+}
+.over_show .important {
+  border-top: 1px solid #fff;
+}
+.over_show li:hover {
   background: #b8b8f0;
   cursor: pointer;
   width: 100%;
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.over_hide {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  bottom: -40px;
+  list-style-type: none;
+  flex-direction: column;
+  background: #dadaeb;
+  width: 110px;
+  border-radius: 3px;
+  height: 70px;
+  opacity: 0;
+  visibility: hidden;
+  animation: hide 0.3s both;
+}
+.over_hide li {
+  width: 80%;
+  height: 35px;
+  padding-top: 4px;
+  align-self: center;
   text-align: center;
 }
-.over li:active {
-  background: #5b7cd6;
+.over_hide .important {
+  border-top: 1px solid #fff;
 }
-.notover {
-  display: none;
+.addCommentBlock {
+  display: flex;
+  width: 100%;
+  margin-top: 26px;
+  margin-bottom: 34px;
+  display: flex;
+  align-items: center;
+}
+.commentImage {
+  cursor: pointer;
+  width: 28px;
+  height: 24px;
+  margin-right: 12px;
+  background-image: url(./feed_img/Comment.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.commentImage:hover {
+  background-image: url(./feed_img/YellowComment\ .svg);
+}
+.commentImageYellow {
+  cursor: pointer;
+  width: 28px;
+  height: 24px;
+  margin-right: 12px;
+  background-image: url(./feed_img/YellowComment\ .svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.plusBonus {
+  cursor: pointer;
+  width: 28px;
+  height: 24px;
+  margin-right: 12px;
+  background-image: url(./feed_img/AddPoint.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.plusBonus:hover {
+  background-image: url(./feed_img/YellowAdd.svg);
 }
 @media (max-width: 960px) {
   .box-bigger {

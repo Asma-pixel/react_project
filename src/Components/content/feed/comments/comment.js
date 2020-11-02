@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./comment.css";
 function Comment({ comm }) {
+
   return (
     <div className="commentBox">
       <div className="profileTitle">

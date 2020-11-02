@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./form.css";
-import gif from "./form_img/gif.svg";
-import Gif from "./form_img/GIF-img.svg";
-function Form({ onCreate, helpValid, AddSidebar }) {
-  const [addSidebar, setAddSidebar] = useState(false);
+function Form({ onCreate, helpValid, OpenSidebar }) {
+  const [addSidebar, setAddSidebar] = useState(true);
   const [point, setPoint] = useState("");
   const [name, setName] = useState("");
   const [reason, setReason] = useState("");
@@ -57,7 +55,7 @@ function Form({ onCreate, helpValid, AddSidebar }) {
           className="wrapper-sandwich"
           onClick={() => {
             setAddSidebar(true);
-            AddSidebar(addSidebar);
+            OpenSidebar(addSidebar);
           }}
         >
           <div className="sandwich"></div>
@@ -115,8 +113,8 @@ function Form({ onCreate, helpValid, AddSidebar }) {
             </div>
           </div>
           <div className="give-block">
-            <img className="gif-image" src={gif} />
-            <img className="gif-image-gif" src={Gif} />
+          <div className="gif-image"></div>
+          <div className="gif-image-gif"></div>
             <div className="wrap-button">
               <input className="but" type="submit" value="Give" />
             </div>

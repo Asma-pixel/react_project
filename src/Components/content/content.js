@@ -3,7 +3,7 @@ import "./content.css";
 import Feed from "./feed/feed";
 import Form from "./form/form";
 import Context from "./Context";
-function Content({ AddSidebar }) {
+function Content({ OpenSidebar }) {
   let [points, setPoints] = useState(100);
   const [bonus, setBonus] = useState([{ id: 0, point: 5, name: "fad" }]);
   function addBonus({ point, name, reason }) {
@@ -31,7 +31,7 @@ function Content({ AddSidebar }) {
           <Form
             onCreate={addBonus}
             helpValid={points}
-            AddSidebar={AddSidebar}
+            OpenSidebar={OpenSidebar}
           />
           <Feed bonus={bonus} key={bonus.id} />
         </Context.Provider>

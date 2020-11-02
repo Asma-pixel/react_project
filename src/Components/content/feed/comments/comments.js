@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Comment from "./comment";
 function Comments(props) {
   return (
-    <div>
+    <div >
       {props.comments.map((comm) => {
         return <Comment comm={comm} key={comm.id} />;
       })}

@@ -2,19 +2,28 @@ import React, { useState } from "react";
 import "./sidebar.css";
 import Header from "./header/header";
 import Navigation from "./navigation/navigation";
-function Sidebar({ sidebarNeded, AddSidebar }) {
-
-  const [addSidebar, setAddSidebar] = useState(true);
+function Sidebar({ sidebarNeded, OpenSidebar }) {
+  console.log(sidebarNeded);
+let openParsidebar = "parentSidebar";
+let openSidebar;
+  if(sidebarNeded==true){
+ openParsidebar="openParSidebar";
+ openSidebar= "sidebarOpen";
+} else if (sidebarNeded== false){
+  openParsidebar="closeParSidebar";
+  openSidebar="sidebarHide"
+}
+  const [addSidebar, setAddSidebar] = useState(false);
   return (
-    <div className={sidebarNeded ? "popParentSidebar" : "parentSidebar"}>
-      <div className={sidebarNeded ? "sidebar" : "sidebar-hide"}>
+    <div className={openParsidebar}>
+      <div className={openSidebar}>
       <Header />
         <Navigation />
         
     </div>
      <div className="leftSide" onClick={() => {
         setAddSidebar(false);
-        AddSidebar(addSidebar);
+        OpenSidebar(addSidebar);
       }}
       ></div>
     </div>

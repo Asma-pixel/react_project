@@ -150,10 +150,30 @@
 }
 .gif-image {
   cursor: pointer;
+  width: 28px;
+  height: 24px;
   margin-right: 12px;
+  background-image: url(./form_img/gif.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.gif-image:hover {
+  background-image: url(./form_img/YellowGif.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .gif-image-gif {
   cursor: pointer;
+  width: 30px;
+  height: 20px;
+  background-image: url(./form_img/GIF-img.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.gif-image-gif:hover {
+  background-image: url(./form_img/YellowGifWord.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .wrap-button {
   display: flex;
